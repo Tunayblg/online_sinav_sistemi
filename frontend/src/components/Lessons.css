@@ -1,0 +1,453 @@
+.lessons-container {
+  display: flex;
+  gap: 25px;
+  height: calc(100vh - 80px);
+}
+
+/* Sol sidebar - Ders listesi */
+.lessons-sidebar {
+  width: 320px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.add-lesson-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.add-lesson-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(17, 153, 142, 0.3);
+}
+
+/* Excel yükleme butonu */
+.excel-upload-section {
+  margin-bottom: 15px;
+}
+
+.excel-upload-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.excel-upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.3);
+}
+
+/* Bölüm filtresi */
+.department-filter-wrapper {
+  margin-bottom: 10px;
+}
+
+.department-filter-wrapper select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.department-filter-wrapper select:hover {
+  border-color: #10b981;
+}
+
+.department-filter-wrapper select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Excel yükleme sonuçları */
+.upload-results-box {
+  background: #f0f9ff;
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.upload-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.upload-results-header h3 {
+  color: #1e40af;
+  font-size: 16px;
+  margin: 0;
+}
+
+.close-results-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #6b7280;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.close-results-btn:hover {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.upload-summary {
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.upload-summary p {
+  margin: 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.upload-details {
+  background: white;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.upload-details summary {
+  font-weight: 600;
+  color: #1e40af;
+  cursor: pointer;
+  padding: 4px;
+  user-select: none;
+}
+
+.upload-details summary:hover {
+  color: #1e3a8a;
+}
+
+.upload-items {
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.upload-item {
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  border-left: 3px solid #3b82f6;
+}
+
+.upload-item p {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.upload-item small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.error-details {
+  border: 2px solid #fca5a5;
+}
+
+.error-item {
+  border-left-color: #dc2626;
+  background: #fef2f2;
+}
+
+.error-item p {
+  color: #991b1b;
+}
+
+.sidebar-title {
+  color: #0d7377;
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.lesson-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lesson-list-item {
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lesson-list-item:hover {
+  border-color: #10b981;
+  background: #f0fdf4;
+}
+
+.lesson-list-item.selected {
+  border-color: #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
+
+.lesson-list-info {
+  flex: 1;
+}
+
+.lesson-name {
+  font-weight: 600;
+  color: #0d7377;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.lesson-code {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.lesson-teacher {
+  font-size: 12px;
+  margin-top: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.lesson-teacher.assigned {
+  color: #059669;
+  background: #d1fae5;
+}
+
+.lesson-teacher.unassigned {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.delete-icon-btn {
+  width: 28px;
+  height: 28px;
+  background: #fee;
+  color: #dc2626;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.delete-icon-btn:hover {
+  background: #dc2626;
+  color: white;
+}
+
+.loading-text, .empty-text {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Sağ taraf - Form alanı */
+.lesson-form-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-form-box {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #d1fae5;
+  overflow-y: auto;
+}
+
+.form-title {
+  color: #0d7377;
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #10b981;
+  padding-bottom: 10px;
+}
+
+.error-message {
+  background: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border-left: 4px solid #c33;
+  font-size: 14px;
+}
+
+.success-message {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border-left: 4px solid #10b981;
+  font-size: 14px;
+}
+
+.lesson-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px 14px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.students-list {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  background: #f9fafb;
+}
+
+.student-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.student-checkbox-label:hover {
+  background: #f0fdf4;
+}
+
+.student-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #10b981;
+}
+
+.student-checkbox-label span {
+  font-size: 14px;
+  color: #374151;
+}
+
+.submit-btn {
+  padding: 14px;
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(17, 153, 142, 0.3);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #9ca3af;
+  font-size: 16px;
+}

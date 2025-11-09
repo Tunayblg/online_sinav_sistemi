@@ -1,0 +1,184 @@
+.admin-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #f0fdf4 0%, #e5e7eb 100%);
+}
+
+/* Sidebar */
+.admin-sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #023b58 0%, #17a84b 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  box-shadow: 8px 0 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.admin-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.sidebar-header {
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-logo {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px auto;
+  object-fit: contain;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px;
+}
+
+.welcome-text {
+  color: white;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.3;
+}
+
+.user-role {
+  color: #d1fae5;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.current-date {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.current-time {
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', monospace;
+}
+
+/* Menü */
+.sidebar-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 16px 18px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: white;
+  transition: all 0.3s;
+  transform: translateY(-50%);
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateX(4px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-item:hover::before {
+  height: 60%;
+}
+
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: 700;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateX(4px);
+}
+
+.menu-item.active::before {
+  height: 80%;
+  background: #d1fae5;
+  box-shadow: 0 0 10px rgba(209, 250, 229, 0.5);
+}
+
+/* Çıkış butonu */
+.logout-button {
+  background: rgba(220, 38, 38, 0.15);
+  color: white;
+  border: 2px solid rgba(220, 38, 38, 0.3);
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 15px;
+  backdrop-filter: blur(10px);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.logout-button:hover {
+  background: rgba(220, 38, 38, 0.9);
+  border-color: rgba(220, 38, 38, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+/* Ana içerik */
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
